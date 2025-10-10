@@ -14,6 +14,6 @@
 ```bash
 python calculator.py
 
-## Требования
+Требования
 
 Python 3.8 или выше
