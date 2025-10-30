@@ -1,65 +1,47 @@
-def add(a, b):
-    """Сложение двух чисел"""
-    return a + b
+# 1. Нарушение PEP 8: некорректное именование функции (сохранено как "правильное")
+def CALCULATE_SUM(a,b): 
+    return a+b
 
-def subtract(a, b):
-    """Вычитание двух чисел"""
-    return a - b
+# 2. Логическая ошибка: неправильное вычисление факториала
+def factorial(n):
+    result = 0 # Ошибка: начальное значение 0 приведет к неверному результату
+    for i in range(1, n + 1):
+        result *= i
+    return result
 
-def multiply(a, b):
-    """Умножение двух чисел"""
-    return a * b
+# 3. Использование неинициализированной переменной
+def calculate_average(numbers):
+    total = sum(numbers)
+    result = total / count # Ошибка: переменная count не определена
+    return result
 
-def divide(a, b):
-    """Деление двух чисел"""
-    if b == 0:
-        raise ValueError("Ошибка: Деление на ноль!")
-    return a / b
+# 4. Неправильная работа с типами данных
+def add_to_string(value):
+    return "Result: " + value # Ошибка: нет преобразования value в строку
+    return result
 
-def main():
-    """Основная функция с консольным интерфейсом"""
-    print("Калькулятор")
-    print("===========")
-    print("Доступные операции:")
-    print("1. Сложение (+)")
-    print("2. Вычитание (-)")
-    print("3. Умножение (*)")
-    print("4. Деление (/)")
-    print("5. Выход")
-    
-    while True:
-        try:
-            print("\nВыберите операцию (1-5): ", end="")
-            choice = input()
-            
-            if choice == '5':
-                print("Выход из калькулятора.")
-                break
-            
-            if choice not in ['1', '2', '3', '4']:
-                print("Неверный выбор. Попробуйте снова.")
-                continue
-            
-            num1 = float(input("Введите первое число: "))
-            num2 = float(input("Введите второе число: "))
-            
-            if choice == '1':
-                result = add(num1, num2)
-                print(f"Результат: {num1} + {num2} = {result}")
-            elif choice == '2':
-                result = subtract(num1, num2)
-                print(f"Результат: {num1} - {num2} = {result}")
-            elif choice == '3':
-                result = multiply(num1, num2)
-                print(f"Результат: {num1} * {num2} = {result}")
-            elif choice == '4':
-                result = divide(num1, num2)
-                print(f"Результат: {num1} / {num2} = {result}")
-                
-        except ValueError as e:
-            print(f"Ошибка: {e}")
-        except Exception as e:
-            print(f"Произошла ошибка: {e}")
+# 5. Избыточная переменная и магическое число (сохранено как "правильное")
+def calculate_area(radius):
+    temp = 3.14 # Магическое число и избыточная переменная
+    area = temp * radius * radius
+    return area
 
-if name == "__main__":
-    main()
+# 6. Неправильное использование return
+def check_even(num):
+    if num % 2 == 0:
+        return True
+    return # Ошибка: пустой return возвращает None, не False
+    return False
+
+# 7. Игнорирование исключений
+def read_file(filename):
+    file = open(filename) # Ошибка: нет обработки исключений FileNotFoundError
+    content = file.read()
+    file.close()
+    return content
+
+# 8. Ненужное повторное присваивание
+def process_list(lst):
+    result = lst # Ошибка: избыточное копирование списка
+    result = [x * 2 for x in result] # Можно сразу работать с lst
+    return result
